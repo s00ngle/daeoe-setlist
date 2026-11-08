@@ -16,7 +16,7 @@
 - 처음에 **이름 + 숫자 4자리 비밀번호**를 입력한다. 처음 제출할 때 비밀번호가 등록되고, 같은 이름/비밀번호로 다시 들어오면 제출한 곡을 불러와 이어서 고르거나 수정한다.
 - **결과는 익명**: 곡별 득표수와 제출 인원수(12곡 완료 인원수)만 보여준다. 참여자 이름 목록도 보여주지 않는다 (먼저 제출한 사람의 선택을 유추할 수 있어서).
 - 유튜브 링크는 **공식 음원**(라이브/방송/커버 X). "Provided to YouTube by"가 붙은 자동 생성 음원 영상을 우선 쓰고, 임베드 가능한지 확인한다.
-- 아티스트 표기: 해외 아티스트는 원어(영어) 이름. 국내 아티스트는 한글 공식명. 다른 표기는 `aka`에 넣어 검색되게 한다.
+- 아티스트 표기: 원래 이름이 영어면 영어로 쓴다 (해외 아티스트, 국내 밴드 The Poles·The Volunteers·10CM·LANY 등). 그 외 국내 아티스트는 한글 공식명. 다른 표기는 `aka`에 넣어 검색되게 한다.
 - 디자인: 로고(`public/logo.png`) 색에 맞춘 **밝은 오프화이트 바탕 + 남색 글씨**. 어두운 남색 바탕은 눈이 아프다고 해서 다크 모드는 쓰지 않는다.
 - UI 언어는 한국어.
 
@@ -97,7 +97,7 @@
 | s22 | 만찬가 | 태연 | https://youtu.be/UOKLtaE2U90 | Bansanka (J-POP REMAKE Vol.1, 2026) |
 | s23 | 외쳐 사랑을! | 김수영 | https://youtu.be/vFkk31GES1A | Spark! (2026) |
 | s24 | Sweet Child O' Mine | Guns N' Roses | https://youtu.be/oMfMUfgjiLg | Sweet Child O' Mine (Appetite For Destruction, 1987) |
-| s25 | Find Me! | 더 폴스 | https://youtu.be/K_x9Vn5NxQw | Find Me! (2021) |
+| s25 | Find Me! | The Poles | https://youtu.be/K_x9Vn5NxQw | Find Me! (2021) |
 | s26 | 노래는 불빛처럼 달린다 | 유다빈밴드 | https://youtu.be/QTsCgsB4Ybw | Song Runs Like a Light (2024) |
 | s27 | LETTER | 유다빈밴드 | https://youtu.be/AKOe_kCI-_I | LETTER (2021) |
 | s28 | 고백 | 델리스파이스 | https://youtu.be/BYyVDi8BpZw | 고백 (Espresso, 2003) |
@@ -108,7 +108,7 @@
 | s33 | 괜찮아 | 소란 | https://youtu.be/Ek3PoMbpjgw | Fine (2022) |
 | s34 | 속삭여줘 (DANG!) | 소란 | https://youtu.be/hHkG5_ZNi_Q | DANG! (Feat. Mongja) (Beloved, 2021) |
 | s35 | 부동의 첫사랑 | 10CM | https://youtu.be/2fEcDnYpOxs | My Ultimate First Love (5.4, 2023) |
-| s36 | Good Morning Sunshine | 더 폴스 | https://youtu.be/HMOWoWerEgk | Good Morning Sunshine (2021) |
+| s36 | Good Morning Sunshine | The Poles | https://youtu.be/HMOWoWerEgk | Good Morning Sunshine (2021) |
 | s37 | Mr. Brightside | The Killers | https://youtu.be/m2zUrruKjDQ | Mr. Brightside (Hot Fuss, 2004) |
 | s38 | Sugar, We're Goin Down | Fall Out Boy | https://youtu.be/_2eTNxPxXRc | Sugar, We're Goin Down (From Under The Cork Tree, 2005) |
 | s39 | I Don't Love You | My Chemical Romance | https://youtu.be/urvSskm48eg | I Don't Love You (The Black Parade, 2006) |
