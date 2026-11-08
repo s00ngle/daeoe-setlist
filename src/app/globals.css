@@ -1,9 +1,12 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
 @import "tailwindcss";
 
+/* 사용자가 고른 다크 테마: <html data-theme="dark"> (layout.tsx의 스크립트가 첫 화면 전에 붙인다) */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 /*
  * 대외활동 로고에서 뽑은 색: 오프화이트 바탕 #fefdfb, 남색 잉크 #031c45 ~ #0d3163 ~ #2b5083.
- * 로고처럼 밝은 바탕 + 남색 글씨로 고정한다 (어두운 남색 바탕은 눈이 피로해서 다크 모드는 쓰지 않는다).
+ * 기본은 로고처럼 밝은 바탕 + 남색 글씨.
  */
 :root {
   color-scheme: light;
@@ -16,6 +19,28 @@
   --on-accent: #fefdfb;
   --warn: #8a5a00;
   --danger: #b3261e;
+}
+
+/*
+ * 다크 테마: 짙은 남색 바탕은 눈이 피로하다고 해서 중립적인 짙은 회색 바탕을 쓰고,
+ * 남색은 밝은 남청색 강조색으로만 남긴다.
+ */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #151618;
+  --surface: #1e2023;
+  --fg: #e8e6e1;
+  --muted: #9b9ea6;
+  --line: #2f3237;
+  --accent: #9fb8e8;
+  --on-accent: #0f1a33;
+  --warn: #e9c46a;
+  --danger: #ff8a80;
+}
+
+/* 남색 로고를 어두운 바탕에서 보이도록 밝은 색으로 바꾼다. */
+:root[data-theme="dark"] .logo {
+  filter: brightness(0) invert(0.9);
 }
 
 @theme inline {

@@ -14,21 +14,28 @@ create extension if not exists pgcrypto with schema extensions;
 create table if not exists public.ballots (
   member          text primary key check (char_length(member) between 1 and 20 and member = btrim(member)),
   pin_hash        text not null,
-  song_ids        text[] not null check (cardinality(song_ids) between 1 and 12),
+  song_ids        text[] not null,
   failed_attempts int not null default 0,
   locked_until    timestamptz,
   updated_at      timestamptz not null default now()
 );
 
+-- 곡 수 제약: 0~12곡 (0곡 = 제출했다가 모두 뺀 상태. 이름/비밀번호 등록은 유지된다)
+-- 예전 버전(1~12곡)으로 만든 테이블도 이 두 줄로 바뀐다.
+alter table public.ballots drop constraint if exists ballots_song_ids_check;
+alter table public.ballots add constraint ballots_song_ids_check check (cardinality(song_ids) between 0 and 12);
+
 alter table public.ballots enable row level security;
 revoke all on public.ballots from anon, authenticated;
 
--- 제출 인원수와 12곡을 다 고른 인원수
+-- 제출 인원수(1곡 이상 고른 사람)와 12곡을 다 고른 인원수
 create or replace function public.get_participant_stats()
 returns table (participants int, completed int)
 language sql stable security definer set search_path = public
 as $$
-  select count(*)::int, (count(*) filter (where cardinality(song_ids) = 12))::int from ballots;
+  select (count(*) filter (where cardinality(song_ids) > 0))::int,
+         (count(*) filter (where cardinality(song_ids) = 12))::int
+  from ballots;
 $$;
 
 -- 곡별 득표수
@@ -112,7 +119,7 @@ begin
     return json_build_object('status', 'invalid_pin');
   end if;
   if p_song_ids is null
-     or cardinality(p_song_ids) not between 1 and 12
+     or cardinality(p_song_ids) not between 0 and 12
      or exists (select 1 from unnest(p_song_ids) x where x is null or x !~ '^s[0-9]{2,3}$')
      or (select count(distinct x) from unnest(p_song_ids) x) <> cardinality(p_song_ids) then
     return json_build_object('status', 'invalid_songs');
@@ -125,6 +132,11 @@ begin
     end if;
     update ballots set song_ids = p_song_ids, updated_at = now() where member = p_member;
     return json_build_object('status', 'ok');
+  end if;
+
+  -- 처음 제출하는데 0곡이면 저장할 게 없다
+  if cardinality(p_song_ids) = 0 then
+    return json_build_object('status', 'invalid_songs');
   end if;
 
   insert into ballots (member, pin_hash, song_ids)

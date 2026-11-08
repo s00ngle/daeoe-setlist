@@ -12,12 +12,12 @@
 
 ## 요구사항 (사용자 결정 사항)
 
-- 멤버 6명. 한 사람당 후보곡 중 **최대 12곡**. 12곡을 다 고르지 않아도(1곡 이상) 제출할 수 있다.
+- 멤버 6명. 한 사람당 후보곡 중 **최대 12곡**. 12곡을 다 고르지 않아도 제출할 수 있다. 처음 제출은 1곡 이상, 이후 수정은 0곡(모두 빼기)도 가능 (0곡이어도 이름/비밀번호 등록은 유지, 제출 인원수에서는 제외).
 - 처음에 **이름 + 숫자 4자리 비밀번호**를 입력한다. 처음 제출할 때 비밀번호가 등록되고, 같은 이름/비밀번호로 다시 들어오면 제출한 곡을 불러와 이어서 고르거나 수정한다.
 - **결과는 익명**: 곡별 득표수와 제출 인원수(12곡 완료 인원수)만 보여준다. 참여자 이름 목록도 보여주지 않는다 (먼저 제출한 사람의 선택을 유추할 수 있어서).
 - 유튜브 링크는 **공식 음원**(라이브/방송/커버 X). "Provided to YouTube by"가 붙은 자동 생성 음원 영상을 우선 쓰고, 임베드 가능한지 확인한다.
 - 아티스트 표기: 원래 이름이 영어면 영어로 쓴다 (해외 아티스트, 국내 밴드 The Poles·The Volunteers·10CM·LANY 등). 그 외 국내 아티스트는 한글 공식명. 다른 표기는 `aka`에 넣어 검색되게 한다.
-- 디자인: 로고(`public/logo.png`) 색에 맞춘 **밝은 오프화이트 바탕 + 남색 글씨**. 어두운 남색 바탕은 눈이 아프다고 해서 다크 모드는 쓰지 않는다.
+- 디자인: 로고(`public/logo.png`) 색에 맞춘 **밝은 오프화이트 바탕 + 남색 글씨**가 기본. 상단 버튼으로 다크 테마를 고를 수 있다(`<html data-theme="dark">`, localStorage `daeoe-theme`). 짙은 남색 바탕은 눈이 아프다고 해서 다크 테마는 중립 짙은 회색 바탕 + 밝은 남청색 강조색.
 - UI 언어는 한국어.
 
 ## 기술 스택
@@ -43,12 +43,12 @@
 ### 데이터 규칙
 - **곡 ID** `s01`~`s48`은 투표 데이터가 참조하므로 **바꾸거나 재사용하지 않는다**. 새 곡은 `s49`부터.
 - 이름은 앞뒤 공백 제거·연속 공백 1개로 정리, 1~20자. 이름이 곧 투표용지의 키다.
-- localStorage: 마지막 이름(`daeoe-name`), 제출 전 선택(`daeoe-draft:<이름>`), 데모 투표(`daeoe-demo-ballots-v2`). 비밀번호는 저장하지 않는다(데모 모드 제외).
+- localStorage: 테마(`daeoe-theme`), 마지막 이름(`daeoe-name`), 제출 전 선택(`daeoe-draft:<이름>`), 데모 투표(`daeoe-demo-ballots-v2`). 비밀번호는 저장하지 않는다(데모 모드 제외).
 
 ### Supabase 보안 설계
 - `ballots(member pk, pin_hash, song_ids text[], failed_attempts, locked_until, updated_at)`
 - RLS를 켜고 anon/authenticated의 테이블 권한을 모두 회수. 브라우저는 함수만 호출한다.
-  - `get_participant_stats()` → 제출 인원수, 12곡 완료 인원수 (이름 없음)
+  - `get_participant_stats()` → 제출 인원수(1곡 이상), 12곡 완료 인원수 (이름 없음)
   - `get_tally()` → 곡별 득표수
   - `login_ballot(member, pin)` → `{status: new|ok|wrong|locked|invalid_*, song_ids?, retry_after?}`
   - `save_ballot(member, pin, song_ids)` → `{status: ok|wrong|locked|invalid_*}`

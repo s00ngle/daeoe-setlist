@@ -26,6 +26,7 @@ const SONGS = songsData as Song[];
 const SONG_IDS = new Set(SONGS.map((s) => s.id));
 const MAX_PICKS = 12;
 const NAME_KEY = "daeoe-name";
+const THEME_KEY = "daeoe-theme"; // layout.tsx의 인라인 스크립트도 이 키를 읽는다
 const draftKey = (name: string) => `daeoe-draft:${name}`;
 const EMPTY_RESULTS: Results = { participants: 0, completed: 0, tally: [] };
 
@@ -49,6 +50,13 @@ function storageRemove(key: string) {
   try {
     localStorage.removeItem(key);
   } catch {}
+}
+
+function toggleTheme() {
+  const root = document.documentElement;
+  const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  root.setAttribute("data-theme", next);
+  storageSet(THEME_KEY, next);
 }
 
 const normalizeName = (s: string) => s.trim().replace(/\s+/g, " ");
@@ -122,7 +130,9 @@ export default function Home() {
 
       let picks = existing ?? [];
       let message = existing
-        ? `지난번에 제출한 ${existing.length}곡을 불러왔어요. 이어서 고르거나 수정할 수 있어요.`
+        ? existing.length > 0
+          ? `지난번에 제출한 ${existing.length}곡을 불러왔어요. 이어서 고르거나 수정할 수 있어요.`
+          : "지난번에 곡을 모두 뺀 상태로 저장했어요. 다시 골라 주세요."
         : "처음 오셨네요! 제출하면 이 이름과 비밀번호로 나중에 다시 들어와 수정할 수 있어요.";
 
       // 이 브라우저에 제출하지 않은 선택이 남아 있으면 그걸 이어서 보여준다.
@@ -180,14 +190,17 @@ export default function Home() {
   }
 
   async function submit() {
-    if (!session || selected.length === 0) return;
+    // 처음 제출할 때는 1곡 이상, 이미 제출했다면 0곡(모두 빼기)도 저장할 수 있다.
+    if (!session || (!savedPicks && selected.length === 0)) return;
     setSaving(true);
     try {
       await saveBallot(session.name, session.pin, selected);
       setSavedPicks(selected);
       storageRemove(draftKey(session.name));
       await reload();
-      if (selected.length === MAX_PICKS) {
+      if (selected.length === 0) {
+        setNotice("고른 곡을 모두 뺐어요. 지금은 투표에 반영된 곡이 없어요.");
+      } else if (selected.length === MAX_PICKS) {
         setNotice(`${MAX_PICKS}곡 모두 제출했어요!`);
         setTab("results");
         window.scrollTo({ top: 0 });
@@ -232,20 +245,31 @@ export default function Home() {
   return (
     <div className="mx-auto w-full max-w-2xl flex-1 px-4 pb-32 pt-8">
       <header className="mb-6">
-        <h1>
-          <Image
-            src="/logo.png"
-            alt="대외활동"
-            width={640}
-            height={252}
-            preload
-            className="logo h-auto w-44 sm:w-52"
-          />
-          <span className="mt-4 flex items-center gap-2 text-2xl font-bold">
-            <span aria-hidden className="text-accent">✦</span>
-            셋리스트 투표
-          </span>
-        </h1>
+        <div className="flex items-start justify-between gap-3">
+          <h1>
+            <Image
+              src="/logo.png"
+              alt="대외활동"
+              width={640}
+              height={252}
+              preload
+              className="logo h-auto w-44 sm:w-52"
+            />
+            <span className="mt-4 flex items-center gap-2 text-2xl font-bold">
+              <span aria-hidden className="text-accent">✦</span>
+              셋리스트 투표
+            </span>
+          </h1>
+          <button
+            onClick={toggleTheme}
+            aria-label="밝은 테마와 어두운 테마 바꾸기"
+            className="shrink-0 rounded-full border border-line bg-surface px-3 py-1.5 text-sm text-muted hover:border-accent hover:text-fg"
+          >
+            {/* 현재 테마는 <html data-theme>로 정해지므로 CSS로 문구를 바꾼다 */}
+            <span className="dark:hidden">☾ 다크</span>
+            <span className="hidden dark:inline">☀ 라이트</span>
+          </button>
+        </div>
         <p className="mt-2 text-muted">
           후보곡 {SONGS.length}곡을 들어보고, 공연하고 싶은 곡을 <b className="text-fg">{MAX_PICKS}곡</b> 골라
           주세요. 한 번에 다 못 골라도 중간에 제출하고 나중에 이어서 고를 수 있어요.
@@ -531,7 +555,7 @@ export default function Home() {
             </div>
             <button
               onClick={() => void submit()}
-              disabled={selected.length === 0 || !dirty || saving}
+              disabled={(!savedPicks && selected.length === 0) || !dirty || saving}
               className="shrink-0 rounded-lg bg-accent px-5 py-2.5 font-semibold text-on-accent disabled:opacity-40"
             >
               {saving ? "저장 중..." : !savedPicks ? "제출하기" : dirty ? "수정 제출" : "제출됨"}

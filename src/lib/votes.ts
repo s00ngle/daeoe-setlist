@@ -43,7 +43,7 @@ function authErrorFrom(r: RpcResult): AuthError {
     case "invalid_pin":
       return new AuthError("invalid", "비밀번호는 숫자 4자리로 입력해 주세요.");
     case "invalid_songs":
-      return new AuthError("invalid", `곡은 1~${MAX_PICKS}곡까지 고를 수 있어요.`);
+      return new AuthError("invalid", `곡은 최대 ${MAX_PICKS}곡까지 고를 수 있고, 처음 제출할 때는 1곡 이상 골라 주세요.`);
     default:
       return new AuthError("invalid", "알 수 없는 응답이에요: " + r.status);
   }
@@ -78,7 +78,7 @@ export async function fetchResults(): Promise<Results> {
     const votes = new Map<string, number>();
     for (const b of list) for (const id of b.song_ids) votes.set(id, (votes.get(id) ?? 0) + 1);
     return {
-      participants: list.length,
+      participants: list.filter((b) => b.song_ids.length > 0).length,
       completed: list.filter((b) => b.song_ids.length === MAX_PICKS).length,
       tally: [...votes].map(([song_id, n]) => ({ song_id, votes: n })),
     };
