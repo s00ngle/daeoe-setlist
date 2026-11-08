@@ -1,0 +1,538 @@
+[
+  {
+    "id": "s01",
+    "title": "Minority",
+    "artist": "Green Day",
+    "videoId": "bVTaJ9sKa_Y",
+    "videoTitle": "Minority (Warning, 2000)",
+    "aka": [
+      "그린데이"
+    ]
+  },
+  {
+    "id": "s02",
+    "title": "I Remember You",
+    "artist": "Skid Row",
+    "videoId": "w0sV8GDpJr8",
+    "videoTitle": "I Remember You (Skid Row, 1989)",
+    "aka": [
+      "스키드로우",
+      "스키드 로우"
+    ]
+  },
+  {
+    "id": "s03",
+    "title": "Just Like Heaven",
+    "artist": "The Cure",
+    "videoId": "JlFFdhXYwxo",
+    "videoTitle": "Just Like Heaven (Kiss Me Kiss Me Kiss Me, 1987)",
+    "aka": [
+      "더 큐어",
+      "더큐어"
+    ]
+  },
+  {
+    "id": "s04",
+    "title": "재",
+    "artist": "한로로",
+    "videoId": "1r7YGKhctuM",
+    "videoTitle": "Ashes (HOME, 2024)",
+    "aka": [
+      "Ashes",
+      "HANRORO"
+    ]
+  },
+  {
+    "id": "s05",
+    "title": "청록",
+    "artist": "이츠",
+    "videoId": "FG1mYbVByMA",
+    "videoTitle": "Blue Rock (2023)",
+    "aka": [
+      "Blue Rock",
+      "It's"
+    ]
+  },
+  {
+    "id": "s06",
+    "title": "Happy Day",
+    "artist": "체리필터",
+    "videoId": "6CFs-4if788",
+    "videoTitle": "Happy Day (Peace N' Rock N' Roll, 2006)",
+    "aka": [
+      "Cherry Filter",
+      "해피데이"
+    ]
+  },
+  {
+    "id": "s07",
+    "title": "前前前世 (Zenzenzense)",
+    "artist": "RADWIMPS",
+    "videoId": "Mw66DyjQxBI",
+    "videoTitle": "Zenzenzense (Original Version) (人間開花, 2016)",
+    "aka": [
+      "래드윔스",
+      "전전전세",
+      "너의 이름은"
+    ]
+  },
+  {
+    "id": "s08",
+    "title": "A Sky Full of Stars",
+    "artist": "Coldplay",
+    "videoId": "KWuyx6yZ21U",
+    "videoTitle": "A Sky Full of Stars (Ghost Stories, 2014)",
+    "aka": [
+      "콜드플레이",
+      "스카이 풀 오브 스타즈"
+    ]
+  },
+  {
+    "id": "s09",
+    "title": "Sparks Fly",
+    "artist": "Taylor Swift",
+    "videoId": "i4opYYbyTKA",
+    "videoTitle": "Sparks Fly (Speak Now, 2010)",
+    "aka": [
+      "테일러 스위프트",
+      "테일러"
+    ]
+  },
+  {
+    "id": "s10",
+    "title": "좋지 아니한가",
+    "artist": "유다빈밴드",
+    "videoId": "Z5sx7Zj5gKE",
+    "videoTitle": "Isn't That Good? (GREAT SEOUL INVASION, 2022)",
+    "aka": [
+      "Isn't That Good?",
+      "YdBB",
+      "유다빈",
+      "크라잉넛"
+    ]
+  },
+  {
+    "id": "s11",
+    "title": "축배",
+    "artist": "유다빈밴드",
+    "videoId": "OoSIy0dMV-A",
+    "videoTitle": "SALUD! (CODA, 2025)",
+    "aka": [
+      "SALUD!",
+      "YdBB",
+      "유다빈"
+    ]
+  },
+  {
+    "id": "s12",
+    "title": "It's Not Living (If It's Not with You)",
+    "artist": "The 1975",
+    "videoId": "3bVJFgvUZHg",
+    "videoTitle": "It's Not Living (If It's Not With You) (A Brief Inquiry Into Online Relationships, 2018)",
+    "aka": [
+      "1975",
+      "잇츠낫리빙"
+    ]
+  },
+  {
+    "id": "s13",
+    "title": "PINKTOP",
+    "artist": "The Volunteers",
+    "videoId": "FsJDnrY1Cuk",
+    "videoTitle": "PINKTOP (The Volunteers, 2021)",
+    "aka": [
+      "핑크탑",
+      "더 발룬티어스",
+      "발룬티얼스"
+    ]
+  },
+  {
+    "id": "s14",
+    "title": "베개와 천장",
+    "artist": "파라솔",
+    "videoId": "87nxRT7fTdw",
+    "videoTitle": "Pillow And Ceiling (2016)",
+    "aka": [
+      "Pillow And Ceiling",
+      "Parasol"
+    ]
+  },
+  {
+    "id": "s15",
+    "title": "Cherub Rock",
+    "artist": "The Smashing Pumpkins",
+    "videoId": "6ywIjjj3YuA",
+    "videoTitle": "Cherub Rock (Siamese Dream, 2011 Remaster)",
+    "aka": [
+      "스매싱 펌킨스",
+      "스매싱펌킨"
+    ]
+  },
+  {
+    "id": "s16",
+    "title": "바이, 썸머",
+    "artist": "아이유",
+    "videoId": "AlNEtjBX1wU",
+    "videoTitle": "Bye, Summer (2025)",
+    "aka": [
+      "Bye, Summer",
+      "바이썸머",
+      "IU"
+    ]
+  },
+  {
+    "id": "s17",
+    "title": "Rock N Roll",
+    "artist": "Avril Lavigne",
+    "videoId": "n-V1luBgA6A",
+    "videoTitle": "Rock N Roll (Avril Lavigne, 2013)",
+    "aka": [
+      "에이브릴 라빈",
+      "에이브릴",
+      "락앤롤"
+    ]
+  },
+  {
+    "id": "s18",
+    "title": "Zombie",
+    "artist": "The Cranberries",
+    "videoId": "yGxHDmHoqXc",
+    "videoTitle": "Zombie (No Need To Argue, 1994)",
+    "aka": [
+      "크랜베리스",
+      "좀비"
+    ]
+  },
+  {
+    "id": "s19",
+    "title": "야경",
+    "artist": "터치드",
+    "videoId": "zEDWt602kgo",
+    "videoTitle": "Night View (Yellow Supernova Remnant, 2023)",
+    "aka": [
+      "Night View",
+      "TOUCHED"
+    ]
+  },
+  {
+    "id": "s20",
+    "title": "Brick by Boring Brick",
+    "artist": "Paramore",
+    "videoId": "ZRJdVTXkdGI",
+    "videoTitle": "Brick by Boring Brick (Brand New Eyes, 2009)",
+    "aka": [
+      "파라모어",
+      "브릭바이보링브릭"
+    ]
+  },
+  {
+    "id": "s21",
+    "title": "Kiss Me",
+    "artist": "Sixpence None the Richer",
+    "videoId": "K2tbQ_g2VbQ",
+    "videoTitle": "Kiss Me (1998)",
+    "aka": [
+      "식스펜스",
+      "키스미"
+    ]
+  },
+  {
+    "id": "s22",
+    "title": "만찬가",
+    "artist": "태연",
+    "videoId": "UOKLtaE2U90",
+    "videoTitle": "Bansanka (J-POP REMAKE Vol.1, 2026)",
+    "aka": [
+      "Bansanka",
+      "TAEYEON",
+      "晩餐歌",
+      "tuki."
+    ]
+  },
+  {
+    "id": "s23",
+    "title": "외쳐 사랑을!",
+    "artist": "김수영",
+    "videoId": "vFkk31GES1A",
+    "videoTitle": "Spark! (2026)",
+    "aka": [
+      "Spark!",
+      "Kim Suyoung"
+    ]
+  },
+  {
+    "id": "s24",
+    "title": "Sweet Child O' Mine",
+    "artist": "Guns N' Roses",
+    "videoId": "oMfMUfgjiLg",
+    "videoTitle": "Sweet Child O' Mine (Appetite For Destruction, 1987)",
+    "aka": [
+      "건즈 앤 로지스",
+      "건즈엔로즈",
+      "스윗차일드마인"
+    ]
+  },
+  {
+    "id": "s25",
+    "title": "Find Me!",
+    "artist": "더 폴스",
+    "videoId": "K_x9Vn5NxQw",
+    "videoTitle": "Find Me! (2021)",
+    "aka": [
+      "The Poles"
+    ]
+  },
+  {
+    "id": "s26",
+    "title": "노래는 불빛처럼 달린다",
+    "artist": "유다빈밴드",
+    "videoId": "QTsCgsB4Ybw",
+    "videoTitle": "Song Runs Like a Light (2024)",
+    "aka": [
+      "Song Runs Like a Light",
+      "YdBB",
+      "페퍼톤스"
+    ]
+  },
+  {
+    "id": "s27",
+    "title": "LETTER",
+    "artist": "유다빈밴드",
+    "videoId": "AKOe_kCI-_I",
+    "videoTitle": "LETTER (2021)",
+    "aka": [
+      "레터",
+      "YdBB"
+    ]
+  },
+  {
+    "id": "s28",
+    "title": "고백",
+    "artist": "델리스파이스",
+    "videoId": "BYyVDi8BpZw",
+    "videoTitle": "고백 (Espresso, 2003)",
+    "aka": [
+      "Deli Spice",
+      "DELISPICE"
+    ]
+  },
+  {
+    "id": "s29",
+    "title": "예감 좋은 날",
+    "artist": "럼블피쉬",
+    "videoId": "u86tEqfkN4E",
+    "videoTitle": "예감 좋은 날 (Swing Attack, 2004)",
+    "aka": [
+      "Rumble Fish",
+      "예감좋은날"
+    ]
+  },
+  {
+    "id": "s30",
+    "title": "관객이 될게",
+    "artist": "아이유",
+    "videoId": "_ZfT3M6ZKEM",
+    "videoTitle": "I stan U (The Winning, 2024)",
+    "aka": [
+      "I stan U",
+      "IU"
+    ]
+  },
+  {
+    "id": "s31",
+    "title": "그라데이션",
+    "artist": "10CM",
+    "videoId": "e7_1cqOtVsc",
+    "videoTitle": "Gradation (5.3, 2022)",
+    "aka": [
+      "Gradation",
+      "십센치"
+    ]
+  },
+  {
+    "id": "s32",
+    "title": "좋은 밤 좋은 꿈",
+    "artist": "너드커넥션",
+    "videoId": "XfzE8ku3TCI",
+    "videoTitle": "Good Night Good Dream (2024)",
+    "aka": [
+      "Good Night Good Dream",
+      "Nerd Connection"
+    ]
+  },
+  {
+    "id": "s33",
+    "title": "괜찮아",
+    "artist": "소란",
+    "videoId": "Ek3PoMbpjgw",
+    "videoTitle": "Fine (2022)",
+    "aka": [
+      "Fine",
+      "SORAN"
+    ]
+  },
+  {
+    "id": "s34",
+    "title": "속삭여줘 (DANG!)",
+    "artist": "소란",
+    "videoId": "hHkG5_ZNi_Q",
+    "videoTitle": "DANG! (Feat. Mongja) (Beloved, 2021)",
+    "aka": [
+      "DANG!",
+      "SORAN",
+      "몽자"
+    ]
+  },
+  {
+    "id": "s35",
+    "title": "부동의 첫사랑",
+    "artist": "10CM",
+    "videoId": "2fEcDnYpOxs",
+    "videoTitle": "My Ultimate First Love (5.4, 2023)",
+    "aka": [
+      "My Ultimate First Love",
+      "십센치"
+    ]
+  },
+  {
+    "id": "s36",
+    "title": "Good Morning Sunshine",
+    "artist": "더 폴스",
+    "videoId": "HMOWoWerEgk",
+    "videoTitle": "Good Morning Sunshine (2021)",
+    "aka": [
+      "The Poles",
+      "굿모닝선샤인"
+    ]
+  },
+  {
+    "id": "s37",
+    "title": "Mr. Brightside",
+    "artist": "The Killers",
+    "videoId": "m2zUrruKjDQ",
+    "videoTitle": "Mr. Brightside (Hot Fuss, 2004)",
+    "aka": [
+      "더 킬러스",
+      "미스터 브라이트사이드"
+    ]
+  },
+  {
+    "id": "s38",
+    "title": "Sugar, We're Goin Down",
+    "artist": "Fall Out Boy",
+    "videoId": "_2eTNxPxXRc",
+    "videoTitle": "Sugar, We're Goin Down (From Under The Cork Tree, 2005)",
+    "aka": [
+      "폴 아웃 보이",
+      "폴아웃보이",
+      "슈가위아고잉다운"
+    ]
+  },
+  {
+    "id": "s39",
+    "title": "I Don't Love You",
+    "artist": "My Chemical Romance",
+    "videoId": "urvSskm48eg",
+    "videoTitle": "I Don't Love You (The Black Parade, 2006)",
+    "aka": [
+      "마이 케미컬 로맨스",
+      "MCR",
+      "아이돈러브유"
+    ]
+  },
+  {
+    "id": "s40",
+    "title": "XXL",
+    "artist": "LANY",
+    "videoId": "SUKKz2Kl8zQ",
+    "videoTitle": "XXL (a beautiful blur, 2023)",
+    "aka": [
+      "레이니"
+    ]
+  },
+  {
+    "id": "s41",
+    "title": "What I've Done",
+    "artist": "Linkin Park",
+    "videoId": "eXRWHzV72sU",
+    "videoTitle": "What I've Done (Minutes to Midnight, 2007)",
+    "aka": [
+      "린킨 파크",
+      "린킨팍"
+    ]
+  },
+  {
+    "id": "s42",
+    "title": "Song 2",
+    "artist": "Blur",
+    "videoId": "Bz4l9_bzfZM",
+    "videoTitle": "Song 2 (Blur, 1997)",
+    "aka": [
+      "블러"
+    ]
+  },
+  {
+    "id": "s43",
+    "title": "Up From the Bottom",
+    "artist": "Linkin Park",
+    "videoId": "pl0qSJ9sdLI",
+    "videoTitle": "Up From the Bottom (From Zero, 2025)",
+    "aka": [
+      "린킨 파크",
+      "린킨팍"
+    ]
+  },
+  {
+    "id": "s44",
+    "title": "When It Rains",
+    "artist": "Paramore",
+    "videoId": "lkRyI-c0qdM",
+    "videoTitle": "When It Rains (Riot!, 2007)",
+    "aka": [
+      "파라모어"
+    ]
+  },
+  {
+    "id": "s45",
+    "title": "Highway to Hell",
+    "artist": "AC/DC",
+    "videoId": "ikFFVfObwss",
+    "videoTitle": "Highway to Hell (Highway to Hell, 1979)",
+    "aka": [
+      "에이씨디씨",
+      "ACDC"
+    ]
+  },
+  {
+    "id": "s46",
+    "title": "Bite Me",
+    "artist": "Avril Lavigne",
+    "videoId": "h5I774U_s2I",
+    "videoTitle": "Bite Me (Love Sux, 2022)",
+    "aka": [
+      "에이브릴 라빈",
+      "에이브릴"
+    ]
+  },
+  {
+    "id": "s47",
+    "title": "Don't Stop Believin'",
+    "artist": "Journey",
+    "videoId": "HNtlPdWoHe8",
+    "videoTitle": "Don't Stop Believin' (Escape, 1981)",
+    "aka": [
+      "저니",
+      "돈스탑빌리빈"
+    ]
+  },
+  {
+    "id": "s48",
+    "title": "민수는 혼란스럽다",
+    "artist": "민수",
+    "videoId": "hq7uG0EwYOg",
+    "videoTitle": "민수는 혼란스럽다 (2019)",
+    "aka": [
+      "Minsu"
+    ]
+  }
+]
