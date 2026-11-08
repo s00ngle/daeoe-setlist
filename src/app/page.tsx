@@ -52,6 +52,23 @@ function storageRemove(key: string) {
   } catch {}
 }
 
+function MoonIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className={className}>
+      <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+    </svg>
+  );
+}
+
+function SunIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className={className}>
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+  );
+}
+
 function toggleTheme() {
   const root = document.documentElement;
   const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
@@ -263,11 +280,14 @@ export default function Home() {
           <button
             onClick={toggleTheme}
             aria-label="밝은 테마와 어두운 테마 바꾸기"
-            className="shrink-0 rounded-full border border-line bg-surface px-3 py-1.5 text-sm text-muted hover:border-accent hover:text-fg"
+            className="flex shrink-0 items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1.5 text-sm text-muted hover:border-accent hover:text-fg"
           >
-            {/* 현재 테마는 <html data-theme>로 정해지므로 CSS로 문구를 바꾼다 */}
-            <span className="dark:hidden">☾ 다크</span>
-            <span className="hidden dark:inline">☀ 라이트</span>
+            {/* 현재 테마는 <html data-theme>로 정해지므로 CSS(dark: 변형)로 아이콘과 문구를 바꾼다.
+                ☀ 같은 기호는 기기에 따라 컬러 이모지로 그려져서 SVG 선 아이콘을 쓴다. */}
+            <MoonIcon className="size-3.5 dark:hidden" />
+            <SunIcon className="hidden size-3.5 text-accent dark:block" />
+            <span className="dark:hidden">Dark</span>
+            <span className="hidden dark:inline">Light</span>
           </button>
         </div>
         <p className="mt-2 text-muted">
