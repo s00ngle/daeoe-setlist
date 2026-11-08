@@ -7,6 +7,8 @@
 
 - GitHub: https://github.com/s00ngle/daeoe-setlist (`main` push → Vercel 자동 배포)
 - 사용법/배포 절차는 README.md 참고
+- Vercel 프로젝트: `soongles-projects/daeoe-setlist` (Supabase 연동으로 환경변수 자동 등록, Production 환경만)
+- Supabase 프로젝트: `qmehibjwglkrorcjyjzs` (ap-southeast-1). `supabase/schema.sql`을 SQL Editor에서 실행해 둠
 
 ## 요구사항 (사용자 결정 사항)
 
